@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,8 +16,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert], completionHandler:{ (g, e) in
+            if (e != nil) {
+                print("err with notification auth: ", e.debugDescription)
+                return
+            }
+            if (g) {
+                UIApplication.shared.registerForRemoteNotifications()
+            }
+        })
         return true
+    }
+
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        var token = String(format: "%@", deviceToken as CVarArg) as String
+        let characterSet: CharacterSet = CharacterSet.init(charactersIn: "<>")
+        token = token.trimmingCharacters(in: characterSet)
+        token = token.replacingOccurrences(of: " ", with: "")
+        print("deviceToken: \(token)")
+    }
+
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("err with notification granted:", error.localizedDescription)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

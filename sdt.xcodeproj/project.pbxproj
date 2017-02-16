@@ -47,6 +47,7 @@
 		72197DB91E558F89009F5F4D /* sdtUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sdtUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72197DBD1E558F89009F5F4D /* sdtUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sdtUITests.swift; sourceTree = "<group>"; };
 		72197DBF1E558F89009F5F4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72F119D01E55A15D003A351F /* sdt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = sdt.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 		72197D9C1E558F89009F5F4D /* sdt */ = {
 			isa = PBXGroup;
 			children = (
+				72F119D01E55A15D003A351F /* sdt.entitlements */,
 				72197D9D1E558F89009F5F4D /* AppDelegate.swift */,
 				72197D9F1E558F89009F5F4D /* ViewController.swift */,
 				72197DA11E558F89009F5F4D /* Main.storyboard */,
@@ -195,6 +197,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 79BW4NWXHJ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					72197DAD1E558F89009F5F4D = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -415,6 +422,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = sdt/sdt.entitlements;
 				DEVELOPMENT_TEAM = 79BW4NWXHJ;
 				INFOPLIST_FILE = sdt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -428,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = sdt/sdt.entitlements;
 				DEVELOPMENT_TEAM = 79BW4NWXHJ;
 				INFOPLIST_FILE = sdt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -514,6 +523,7 @@
 				72197DC41E558F89009F5F4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		72197DC51E558F89009F5F4D /* Build configuration list for PBXNativeTarget "sdtTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +532,7 @@
 				72197DC71E558F89009F5F4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		72197DC81E558F89009F5F4D /* Build configuration list for PBXNativeTarget "sdtUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +541,7 @@
 				72197DCA1E558F89009F5F4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
