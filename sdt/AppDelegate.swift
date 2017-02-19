@@ -31,6 +31,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let token = String(format: "%@", deviceToken as CVarArg) as String
         print("deviceToken: \(token)")
+        addWeeklyNotification()
+    }
+
+    func addWeeklyNotification() {
+        var dateComp = DateComponents()
+        dateComp.hour = 20
+
+        let trig = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: false)
+        let req = UNNotificationRequest(identifier: "weeklyAlert", content: createContentOfAlert(), trigger: trig)
+
+        UNUserNotificationCenter.current().add(req, withCompletionHandler: nil)
+    }
+
+    func createContentOfAlert() -> UNMutableNotificationContent {
+        let content = UNMutableNotificationContent()
+        content.title = "千代田区ごみ"
+        // create subtitle
+        let weekday = NSCalendar.current.component(Calendar.Component.weekday, from: NSDate() as Date)
+        switch weekday {
+        case 1: //sunday
+            content.subtitle = "Tomorrow is Monday"
+            content.body = "生ごみ"
+            break
+        case 2: //monday
+            content.subtitle = "Tomorrow is Tuesday"
+            content.body = "資源ごみ"
+            break
+        case 3: //tuesday
+            content.subtitle = "Tomorrow is Wednesday"
+            content.body = "ごみなし"
+            break
+        case 4: //wednesday
+            content.subtitle = "Tomorrow is Thursday"
+            content.body = "生ごみ"
+            break
+        case 5: //thursday
+            content.subtitle = "Tomorrow is Friday"
+            content.body = "プラスチックごみ"
+            break
+        case 6: //friday
+            content.subtitle = "Tomorrow is Saturday"
+            content.body = "ごみなし"
+            break
+        case 7: //saturday
+            content.subtitle = "Tomorrow is Sunday"
+            content.body = "ごみなし"
+            break
+        default: break
+        }
+        content.sound = UNNotificationSound.default()
+        return content
     }
 
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
