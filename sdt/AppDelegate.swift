@@ -29,10 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        var token = String(format: "%@", deviceToken as CVarArg) as String
-        let characterSet: CharacterSet = CharacterSet.init(charactersIn: "<>")
-        token = token.trimmingCharacters(in: characterSet)
-        token = token.replacingOccurrences(of: " ", with: "")
+        let token = String(format: "%@", deviceToken as CVarArg) as String
         print("deviceToken: \(token)")
     }
 
