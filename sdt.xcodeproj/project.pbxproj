@@ -49,7 +49,7 @@
 		72197DBD1E558F89009F5F4D /* sdtUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sdtUITests.swift; sourceTree = "<group>"; };
 		72197DBF1E558F89009F5F4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72F119D01E55A15D003A351F /* sdt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = sdt.entitlements; sourceTree = "<group>"; };
-		72F119E71E5EC8DE003A351F /* garbageBag3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = garbageBag3.png; path = ../../../Downloads/garbageBag3.png; sourceTree = "<group>"; };
+		72F119E71E5EC8DE003A351F /* garbageBag3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = garbageBag3.png; path = images/garbageBag3.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
