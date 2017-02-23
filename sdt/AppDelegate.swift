@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // reset all local notification
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        // check permission for notification
         UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert], completionHandler:{ (g, e) in
             if (e != nil) {
                 return
@@ -36,9 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func addWeeklyNotification() {
         var dateComp = DateComponents()
-        dateComp.hour = 20
+        dateComp.hour   = 20
 
-        let trig = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: false)
+        let trig = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: true)
         let req = UNNotificationRequest(identifier: "weeklyAlert", content: createContentOfAlert(), trigger: trig)
 
         UNUserNotificationCenter.current().add(req, withCompletionHandler: nil)
