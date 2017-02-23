@@ -14,6 +14,7 @@
 		72197DA81E558F89009F5F4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72197DA61E558F89009F5F4D /* LaunchScreen.storyboard */; };
 		72197DB31E558F89009F5F4D /* sdtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72197DB21E558F89009F5F4D /* sdtTests.swift */; };
 		72197DBE1E558F89009F5F4D /* sdtUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72197DBD1E558F89009F5F4D /* sdtUITests.swift */; };
+		72F119E81E5EC8DE003A351F /* garbageBag3.png in Resources */ = {isa = PBXBuildFile; fileRef = 72F119E71E5EC8DE003A351F /* garbageBag3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		72197DBD1E558F89009F5F4D /* sdtUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sdtUITests.swift; sourceTree = "<group>"; };
 		72197DBF1E558F89009F5F4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72F119D01E55A15D003A351F /* sdt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = sdt.entitlements; sourceTree = "<group>"; };
+		72F119E71E5EC8DE003A351F /* garbageBag3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = garbageBag3.png; path = ../../../Downloads/garbageBag3.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		72197D9C1E558F89009F5F4D /* sdt */ = {
 			isa = PBXGroup;
 			children = (
+				72F119E61E5EC8CD003A351F /* images */,
 				72F119D01E55A15D003A351F /* sdt.entitlements */,
 				72197D9D1E558F89009F5F4D /* AppDelegate.swift */,
 				72197D9F1E558F89009F5F4D /* ViewController.swift */,
@@ -125,6 +128,14 @@
 				72197DBF1E558F89009F5F4D /* Info.plist */,
 			);
 			path = sdtUITests;
+			sourceTree = "<group>";
+		};
+		72F119E61E5EC8CD003A351F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				72F119E71E5EC8DE003A351F /* garbageBag3.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72F119E81E5EC8DE003A351F /* garbageBag3.png in Resources */,
 				72197DA81E558F89009F5F4D /* LaunchScreen.storyboard in Resources */,
 				72197DA51E558F89009F5F4D /* Assets.xcassets in Resources */,
 				72197DA31E558F89009F5F4D /* Main.storyboard in Resources */,
