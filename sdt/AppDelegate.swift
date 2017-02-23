@@ -31,8 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        let token = String(format: "%@", deviceToken as CVarArg) as String
-        print("deviceToken: \(token)")
         addWeeklyNotification()
     }
 
@@ -51,37 +49,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         content.title = "千代田区ごみ"
         // create subtitle
         let weekday = NSCalendar.current.component(Calendar.Component.weekday, from: NSDate() as Date)
+        content.subtitle = "明日は"
         switch weekday {
         case 1: //sunday
-            content.subtitle = "Tomorrow is Monday"
+            content.subtitle.append("月曜日")
             content.body = "生ごみ"
             break
         case 2: //monday
-            content.subtitle = "Tomorrow is Tuesday"
+            content.subtitle.append("火曜日")
             content.body = "資源ごみ"
             break
         case 3: //tuesday
-            content.subtitle = "Tomorrow is Wednesday"
+            content.subtitle.append("水曜日")
             content.body = "ごみなし"
             break
         case 4: //wednesday
-            content.subtitle = "Tomorrow is Thursday"
+            content.subtitle.append("木曜日")
             content.body = "生ごみ"
             break
         case 5: //thursday
-            content.subtitle = "Tomorrow is Friday"
+            content.subtitle.append("金曜日")
             content.body = "プラスチックごみ"
             break
         case 6: //friday
-            content.subtitle = "Tomorrow is Saturday"
+            content.subtitle.append("土曜日")
             content.body = "ごみなし"
             break
         case 7: //saturday
-            content.subtitle = "Tomorrow is Sunday"
+            content.subtitle.append("日曜日")
             content.body = "ごみなし"
             break
         default: break
         }
+        content.body.append("の日です。")
         content.sound = UNNotificationSound.default()
         return content
     }

@@ -26,7 +26,7 @@ class sdtTests: XCTestCase {
         XCTAssertEqual(res.title, "千代田区ごみ")
         let weekday = NSCalendar.current.component(Calendar.Component.weekday, from: NSDate() as Date)
         if weekday == 1 {
-            XCTAssertTrue(res.subtitle.contains("Monday"))
+            XCTAssertTrue(res.subtitle.contains("月曜日"))
         }
     }
     
