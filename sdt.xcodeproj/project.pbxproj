@@ -48,7 +48,8 @@
 		72197DB91E558F89009F5F4D /* sdtUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sdtUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72197DBD1E558F89009F5F4D /* sdtUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sdtUITests.swift; sourceTree = "<group>"; };
 		72197DBF1E558F89009F5F4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		72F119D01E55A15D003A351F /* sdt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = sdt.entitlements; sourceTree = "<group>"; };
+		7256C6161E614B0300963341 /* development.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = development.entitlements; sourceTree = "<group>"; };
+		7256C6191E6150BC00963341 /* production.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = production.entitlements; sourceTree = "<group>"; };
 		72F119E71E5EC8DE003A351F /* garbageBag3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = garbageBag3.png; path = images/garbageBag3.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,14 +101,15 @@
 		72197D9C1E558F89009F5F4D /* sdt */ = {
 			isa = PBXGroup;
 			children = (
-				72F119E61E5EC8CD003A351F /* images */,
-				72F119D01E55A15D003A351F /* sdt.entitlements */,
+				7256C6191E6150BC00963341 /* production.entitlements */,
+				7256C6161E614B0300963341 /* development.entitlements */,
 				72197D9D1E558F89009F5F4D /* AppDelegate.swift */,
 				72197D9F1E558F89009F5F4D /* ViewController.swift */,
 				72197DA11E558F89009F5F4D /* Main.storyboard */,
 				72197DA41E558F89009F5F4D /* Assets.xcassets */,
 				72197DA61E558F89009F5F4D /* LaunchScreen.storyboard */,
 				72197DA91E558F89009F5F4D /* Info.plist */,
+				72F119E61E5EC8CD003A351F /* images */,
 			);
 			path = sdt;
 			sourceTree = "<group>";
@@ -434,7 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = sdt/sdt.entitlements;
+				CODE_SIGN_ENTITLEMENTS = sdt/development.entitlements;
 				DEVELOPMENT_TEAM = 79BW4NWXHJ;
 				INFOPLIST_FILE = sdt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -448,7 +450,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = sdt/sdt.entitlements;
+				CODE_SIGN_ENTITLEMENTS = sdt/production.entitlements;
 				DEVELOPMENT_TEAM = 79BW4NWXHJ;
 				INFOPLIST_FILE = sdt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
