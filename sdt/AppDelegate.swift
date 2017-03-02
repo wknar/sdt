@@ -39,12 +39,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         dateComp.hour   = 20
 
         let trig = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: true)
-        let req = UNNotificationRequest(identifier: "weeklyAlert", content: createContentOfAlert(), trigger: trig)
-
-        UNUserNotificationCenter.current().add(req, withCompletionHandler: nil)
+        for w in 1...7 {
+            let req = UNNotificationRequest(identifier: "weeklyAlert", content: createContentOfAlert(w), trigger: trig)
+            UNUserNotificationCenter.current().add(req, withCompletionHandler: nil)
+        }
     }
 
-    func createContentOfAlert() -> UNMutableNotificationContent {
+    func createContentOfAlert(_ w: Int) -> UNMutableNotificationContent {
         let content = UNMutableNotificationContent()
         content.title = "千代田区ごみ"
         // create subtitle
