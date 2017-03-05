@@ -25,10 +25,7 @@ class sdtTests: XCTestCase {
         let w: Int = 1
         let res: UNMutableNotificationContent = AppDelegate().createContentOfAlert(w)
         XCTAssertEqual(res.title, "千代田区ごみ")
-        let weekday = NSCalendar.current.component(Calendar.Component.weekday, from: NSDate() as Date)
-        if weekday == 1 {
-            XCTAssertTrue(res.subtitle.contains("月曜日"))
-        }
+        XCTAssertTrue(res.subtitle.contains("月曜日"))
     }
-    
+
 }

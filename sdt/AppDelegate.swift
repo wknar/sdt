@@ -49,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let content = UNMutableNotificationContent()
         content.title = "千代田区ごみ"
         // create subtitle
-        let weekday = NSCalendar.current.component(Calendar.Component.weekday, from: NSDate() as Date)
+        let weekday = w
         content.subtitle = "明日は"
         switch weekday {
         case 1: //sunday
