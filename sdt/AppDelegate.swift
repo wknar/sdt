@@ -38,10 +38,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var dateComp = DateComponents()
         dateComp.hour   = 20
 
-        let trig = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: true)
         for w in 1...7 {
-            let req = UNNotificationRequest(identifier: "weeklyAlert", content: createContentOfAlert(w), trigger: trig)
-            UNUserNotificationCenter.current().add(req, withCompletionHandler: nil)
+            dateComp.weekday = w
+            let trig = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: true)
+            UNUserNotificationCenter.current().add(UNNotificationRequest(identifier: "weeklyAlert" + String(w),
+                                                                         content: createContentOfAlert(w),
+                                                                         trigger: trig), withCompletionHandler: nil)
         }
     }
 
