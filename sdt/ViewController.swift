@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UIViewController {
 
@@ -24,6 +25,13 @@ class ViewController: UIViewController {
         self.garbBag.tag = 2
 
         initView()
+    }
+
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        saveAlert()
+        readAlert()
     }
 
     func initView() {
@@ -46,5 +54,23 @@ class ViewController: UIViewController {
         return CGRect.zero
     }
 
-}
+    func readAlert() {
+        let realm = try! Realm()
+        let alert = realm.objects(Alert.self)
+        print("********** alert", alert)
+    }
 
+    func saveAlert() {
+        let realm = try! Realm()
+        let alert = Alert()
+        alert.title = "title dayo"
+        alert.desc = "description dayo"
+        alert.hour = 23
+        alert.minute = 23
+
+        try! realm.write() {
+            realm.add(alert)
+        }
+    }
+
+}
