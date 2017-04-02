@@ -26,7 +26,6 @@ class ViewController: UIViewController {
     func readAlert() {
         let realm = try! Realm()
         let alert = realm.objects(Alert.self)
-        print("********** alert", alert)
     }
 
     func saveAlert(_ hour: Int, _ minute: Int) {
@@ -40,6 +39,7 @@ class ViewController: UIViewController {
         try! realm.write() {
             realm.add(alert, update: true)
             showSavedAlert()
+            AppDelegate().addWeeklyNotification(hour, minute)
         }
     }
 

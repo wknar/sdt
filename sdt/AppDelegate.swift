@@ -16,8 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // reset all local notification
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         // check permission for notification
         UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert], completionHandler:{ (g, e) in
             if (e != nil) {
@@ -31,12 +29,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        addWeeklyNotification()
+        // addWeeklyNotification()
     }
 
-    func addWeeklyNotification() {
+    func addWeeklyNotification(_ hour: Int, _ minute: Int) {
+        // reset all local notification
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         var dateComp = DateComponents()
-        dateComp.hour   = 20
+        dateComp.hour   = hour
+        dateComp.minute = minute
 
         for w in 1...7 {
             dateComp.weekday = w
