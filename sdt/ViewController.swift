@@ -12,6 +12,7 @@ import RealmSwift
 class ViewController: UIViewController {
 
     @IBOutlet var timePicker: UIDatePicker?
+    @IBOutlet var timeLabel: UILabel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,11 @@ class ViewController: UIViewController {
     func readAlert() {
         let realm = try! Realm()
         let alert = realm.objects(Alert.self)
+        if let time = alert.first {
+            timeLabel?.text = String(time.hour) + "時" + String(time.minute) + "分" + "に設定しています。"
+        } else {
+            timeLabel?.text = ""
+        }
     }
 
     func saveAlert(_ hour: Int, _ minute: Int) {

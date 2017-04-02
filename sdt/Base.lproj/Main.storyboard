@@ -70,6 +70,15 @@
                                     <action selector="okButtonAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="85m-BX-two"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11時11分に設定しています。" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njF-hd-ETB">
+                                <rect key="frame" x="0.0" y="173.5" width="375" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="E06-TV-m6G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -77,20 +86,24 @@
                             <constraint firstItem="8k1-J5-5Jb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fdm-Un-v9d"/>
                             <constraint firstItem="QNt-gG-Gpz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JGK-Py-1Wa"/>
                             <constraint firstAttribute="trailing" secondItem="uiv-Ed-O9h" secondAttribute="trailing" constant="5" id="Q6J-Rf-axM"/>
+                            <constraint firstItem="njF-hd-ETB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SFL-MZ-2Go"/>
                             <constraint firstItem="8k1-J5-5Jb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Yr0-yo-A5c"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8k1-J5-5Jb" secondAttribute="trailing" id="h2I-dB-XvY"/>
                             <constraint firstAttribute="centerY" secondItem="8k1-J5-5Jb" secondAttribute="bottom" constant="100" id="hng-mn-qdt"/>
                             <constraint firstItem="QNt-gG-Gpz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nZt-9X-mbt"/>
                             <constraint firstItem="1R9-Ze-aDR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pk9-As-2gF"/>
+                            <constraint firstAttribute="trailing" secondItem="njF-hd-ETB" secondAttribute="trailing" id="qA3-86-lfA"/>
                             <constraint firstAttribute="trailing" secondItem="QNt-gG-Gpz" secondAttribute="trailing" id="rl2-SY-ebd"/>
                             <constraint firstItem="rVX-to-ozk" firstAttribute="top" secondItem="QNt-gG-Gpz" secondAttribute="bottom" constant="10" id="uA3-GU-T8O"/>
                             <constraint firstItem="QNt-gG-Gpz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vKj-bT-6Cl"/>
+                            <constraint firstItem="8k1-J5-5Jb" firstAttribute="top" secondItem="njF-hd-ETB" secondAttribute="bottom" constant="10" id="wxH-71-BUm"/>
                             <constraint firstItem="1R9-Ze-aDR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="x90-RP-ell"/>
                             <constraint firstItem="uiv-Ed-O9h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="xuH-5a-XDq"/>
                             <constraint firstItem="rVX-to-ozk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zu2-2Y-6oU"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="timeLabel" destination="njF-hd-ETB" id="um8-Sx-xeZ"/>
                         <outlet property="timePicker" destination="QNt-gG-Gpz" id="IjU-8Q-HlC"/>
                     </connections>
                 </viewController>
