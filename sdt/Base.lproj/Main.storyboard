@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="thank you for installing!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8k1-J5-5Jb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="何時にアラートを設定しますか？" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8k1-J5-5Jb">
                                 <rect key="frame" x="16" y="203.5" width="343" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="TQ3-NO-G43"/>
@@ -33,9 +33,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiv-Ed-O9h">
-                                <rect key="frame" x="5" y="531.5" width="365" height="105.5"/>
+                                <rect key="frame" x="5" y="545" width="365" height="92"/>
                                 <string key="text">これは千代田区の回収ゴミ種類をお知らせするアプリです。
-千代田区以外に住んでる方にとってはこれ自体がゴミです。 毎日20時に明日のゴミアラートが届きます。
+千代田区以外に住んでる方にとってはこれ自体がゴミです。
  ゴミを正しく出して清潔で文化的な生活を送りましょう。
 今後のアップデートで色々なリマインドができるようにする予定です。
  それでは社会のゴミにならないように今日も元気に働きましょう。</string>
@@ -43,22 +43,63 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="QNt-gG-Gpz">
+                                <rect key="frame" x="0.0" y="226" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="512811365.236265">
+                                    <!--2017-04-02 07:36:05 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="en_JP"/>
+                            </datePicker>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="garbageBag3.png" translatesAutoresizingMaskIntoConstraints="NO" id="1R9-Ze-aDR">
+                                <rect key="frame" x="162" y="50" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="5JM-Of-csg"/>
+                                    <constraint firstAttribute="height" constant="50" id="QU4-8z-yYI"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rVX-to-ozk">
+                                <rect key="frame" x="162.5" y="452" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="ost-eK-F3o"/>
+                                    <constraint firstAttribute="height" constant="30" id="qsb-YP-2yi"/>
+                                </constraints>
+                                <state key="normal" title="OK">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="okButtonAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="85m-BX-two"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="uiv-Ed-O9h" secondAttribute="bottom" constant="30" id="61Y-0h-Q3V"/>
                             <constraint firstItem="8k1-J5-5Jb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fdm-Un-v9d"/>
+                            <constraint firstItem="QNt-gG-Gpz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JGK-Py-1Wa"/>
                             <constraint firstAttribute="trailing" secondItem="uiv-Ed-O9h" secondAttribute="trailing" constant="5" id="Q6J-Rf-axM"/>
                             <constraint firstItem="8k1-J5-5Jb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Yr0-yo-A5c"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8k1-J5-5Jb" secondAttribute="trailing" id="h2I-dB-XvY"/>
                             <constraint firstAttribute="centerY" secondItem="8k1-J5-5Jb" secondAttribute="bottom" constant="100" id="hng-mn-qdt"/>
+                            <constraint firstItem="QNt-gG-Gpz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nZt-9X-mbt"/>
+                            <constraint firstItem="1R9-Ze-aDR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pk9-As-2gF"/>
+                            <constraint firstAttribute="trailing" secondItem="QNt-gG-Gpz" secondAttribute="trailing" id="rl2-SY-ebd"/>
+                            <constraint firstItem="rVX-to-ozk" firstAttribute="top" secondItem="QNt-gG-Gpz" secondAttribute="bottom" constant="10" id="uA3-GU-T8O"/>
+                            <constraint firstItem="QNt-gG-Gpz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="vKj-bT-6Cl"/>
+                            <constraint firstItem="1R9-Ze-aDR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="x90-RP-ell"/>
                             <constraint firstItem="uiv-Ed-O9h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="xuH-5a-XDq"/>
+                            <constraint firstItem="rVX-to-ozk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zu2-2Y-6oU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="timePicker" destination="QNt-gG-Gpz" id="IjU-8Q-HlC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="garbageBag3.png" width="800" height="800"/>
+    </resources>
 </document>

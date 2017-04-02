@@ -11,47 +11,16 @@ import RealmSwift
 
 class ViewController: UIViewController {
 
-    var uppLbl:     UILabel?
-    var rowLbl:     UILabel?
-
-    var garbBag =   UIImageView()
+    @IBOutlet var timePicker: UIDatePicker?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // set tags in each views
-        self.uppLbl?.tag  = 0
-        self.rowLbl?.tag  = 1
-        self.garbBag.tag = 2
-
-        initView()
     }
 
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        saveAlert()
         readAlert()
-    }
-
-    func initView() {
-        self.garbBag.image = UIImage(named: "garbageBag3.png")
-        self.garbBag.frame = viewFrames(tag: self.garbBag.tag)
-       self.view.addSubview(self.garbBag)
-    }
-
-    func viewFrames(tag: Int) -> CGRect {
-        let screenSize: CGRect = UIScreen.main.bounds
-        switch tag {
-        case 0:
-            break
-        case 1:
-            break
-        case 2:
-            return CGRect(x: screenSize.width/2-50, y: screenSize.height/2-50, width: 100, height: 100)
-        default: return CGRect.zero
-        }
-        return CGRect.zero
     }
 
     func readAlert() {
@@ -60,16 +29,37 @@ class ViewController: UIViewController {
         print("********** alert", alert)
     }
 
-    func saveAlert() {
+    func saveAlert(_ hour: Int, _ minute: Int) {
         let realm = try! Realm()
         let alert = Alert()
         alert.title = "title dayo"
         alert.desc = "description dayo"
-        alert.hour = 23
-        alert.minute = 23
+        alert.hour = hour
+        alert.minute = minute
 
         try! realm.write() {
-            realm.add(alert)
+            realm.add(alert, update: true)
+            showSavedAlert()
+        }
+    }
+
+    func showSavedAlert() {
+        let alert = UIAlertController(title: "", message: "保存しました", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    @IBAction func okButtonAction() {
+        print("*** tapped")
+        let df = DateFormatter()
+        df.locale = Locale(identifier: "ja_JP")
+        df.dateFormat = "HH:mm"
+
+        if let time = timePicker?.date {
+            let changeTime = df.string(from: time).components(separatedBy: ":")
+            if let hour = Int(changeTime[0]), let minute = Int(changeTime[1]) {
+                saveAlert(hour, minute)
+            }
         }
     }
 
