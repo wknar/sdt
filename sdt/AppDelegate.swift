@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // addWeeklyNotification()
     }
 
-    func addWeeklyNotification(_ hour: Int, _ minute: Int) {
+    func addWeeklyNotification(_ hour: Int, _ minute: Int, _ content: [String]) {
         // reset all local notification
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         var dateComp = DateComponents()
@@ -43,12 +43,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             dateComp.weekday = w
             let trig = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: true)
             UNUserNotificationCenter.current().add(UNNotificationRequest(identifier: "weeklyAlert" + String(w),
-                                                                         content: createContentOfAlert(w),
+                                                                         content: createContentOfAlert(w, content),
                                                                          trigger: trig), withCompletionHandler: nil)
         }
     }
 
-    func createContentOfAlert(_ w: Int) -> UNMutableNotificationContent {
+    func createContentOfAlert(_ w: Int, _ contentList: [String]) -> UNMutableNotificationContent {
         let content = UNMutableNotificationContent()
         content.title = "千代田区ごみ"
         // create subtitle
@@ -57,31 +57,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         switch weekday {
         case 1: //sunday
             content.subtitle.append("月曜日")
-            content.body = "生ごみ"
+            content.body = contentList[0]
             break
         case 2: //monday
             content.subtitle.append("火曜日")
-            content.body = "資源ごみ"
+            content.body = contentList[1]
             break
         case 3: //tuesday
             content.subtitle.append("水曜日")
-            content.body = "ごみなし"
+            content.body = contentList[2]
             break
         case 4: //wednesday
             content.subtitle.append("木曜日")
-            content.body = "生ごみ"
+            content.body = contentList[3]
             break
         case 5: //thursday
             content.subtitle.append("金曜日")
-            content.body = "プラスチックごみ"
+            content.body = contentList[4]
             break
         case 6: //friday
             content.subtitle.append("土曜日")
-            content.body = "ごみなし"
+            content.body = contentList[5]
             break
         case 7: //saturday
             content.subtitle.append("日曜日")
-            content.body = "ごみなし"
+            content.body = contentList[6]
             break
         default: break
         }

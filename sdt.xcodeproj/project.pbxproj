@@ -17,6 +17,7 @@
 		72197DB31E558F89009F5F4D /* sdtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72197DB21E558F89009F5F4D /* sdtTests.swift */; };
 		72197DBE1E558F89009F5F4D /* sdtUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72197DBD1E558F89009F5F4D /* sdtUITests.swift */; };
 		721EC62E1E7FA78E004897C9 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721EC62D1E7FA78E004897C9 /* Alert.swift */; };
+		727C6D6B1EBC557200F821A8 /* Garbage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C6D6A1EBC557200F821A8 /* Garbage.swift */; };
 		72F119E81E5EC8DE003A351F /* garbageBag3.png in Resources */ = {isa = PBXBuildFile; fileRef = 72F119E71E5EC8DE003A351F /* garbageBag3.png */; };
 		F7029C7D8029F4B9EA6558A9 /* Pods_sdtUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68A76638D00679EDE379C8B4 /* Pods_sdtUITests.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		721EC62D1E7FA78E004897C9 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		7256C6161E614B0300963341 /* development.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = development.entitlements; sourceTree = "<group>"; };
 		7256C6191E6150BC00963341 /* production.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = production.entitlements; sourceTree = "<group>"; };
+		727C6D6A1EBC557200F821A8 /* Garbage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Garbage.swift; sourceTree = "<group>"; };
 		72F119E71E5EC8DE003A351F /* garbageBag3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = garbageBag3.png; path = images/garbageBag3.png; sourceTree = "<group>"; };
 		E7B3462BBEDE567427C3A216 /* Pods_sdt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sdt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -138,6 +140,7 @@
 				72197D9D1E558F89009F5F4D /* AppDelegate.swift */,
 				72197D9F1E558F89009F5F4D /* ViewController.swift */,
 				721EC62D1E7FA78E004897C9 /* Alert.swift */,
+				727C6D6A1EBC557200F821A8 /* Garbage.swift */,
 				72197DA11E558F89009F5F4D /* Main.storyboard */,
 				72197DA41E558F89009F5F4D /* Assets.xcassets */,
 				72197DA61E558F89009F5F4D /* LaunchScreen.storyboard */,
@@ -474,6 +477,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				721EC62E1E7FA78E004897C9 /* Alert.swift in Sources */,
+				727C6D6B1EBC557200F821A8 /* Garbage.swift in Sources */,
 				72197DA01E558F89009F5F4D /* ViewController.swift in Sources */,
 				72197D9E1E558F89009F5F4D /* AppDelegate.swift in Sources */,
 			);
