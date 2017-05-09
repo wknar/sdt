@@ -83,25 +83,25 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         switch day {
         case 1:
             contentLabel1?.text = pickerList[row]
-            contentList.insert(pickerList[row], at: 0)
+            contentList[0] = pickerList[row]
         case 2:
             contentLabel2?.text = pickerList[row]
-            contentList.insert(pickerList[row], at: 1)
+            contentList[1] = pickerList[row]
         case 3:
             contentLabel3?.text = pickerList[row]
-            contentList.insert(pickerList[row], at: 2)
+            contentList[2] = pickerList[row]
         case 4:
             contentLabel4?.text = pickerList[row]
-            contentList.insert(pickerList[row], at: 3)
+            contentList[3] = pickerList[row]
         case 5:
             contentLabel5?.text = pickerList[row]
-            contentList.insert(pickerList[row], at: 4)
+            contentList[4] = pickerList[row]
         case 6:
             contentLabel6?.text = pickerList[row]
-            contentList.insert(pickerList[row], at: 5)
+            contentList[5] = pickerList[row]
         case 7:
             contentLabel7?.text = pickerList[row]
-            contentList.insert(pickerList[row], at: 6)
+            contentList[6] = pickerList[row]
         default:
             return
         }
