@@ -18,6 +18,8 @@
 		72197DBE1E558F89009F5F4D /* sdtUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72197DBD1E558F89009F5F4D /* sdtUITests.swift */; };
 		721EC62E1E7FA78E004897C9 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721EC62D1E7FA78E004897C9 /* Alert.swift */; };
 		727C6D6B1EBC557200F821A8 /* Garbage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C6D6A1EBC557200F821A8 /* Garbage.swift */; };
+		727C6D6D1EBF1D1000F821A8 /* WardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C6D6C1EBF1D1000F821A8 /* WardListViewController.swift */; };
+		727C6D6F1EBF1DE500F821A8 /* PdfImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727C6D6E1EBF1DE500F821A8 /* PdfImageViewController.swift */; };
 		72F119E81E5EC8DE003A351F /* garbageBag3.png in Resources */ = {isa = PBXBuildFile; fileRef = 72F119E71E5EC8DE003A351F /* garbageBag3.png */; };
 		F7029C7D8029F4B9EA6558A9 /* Pods_sdtUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68A76638D00679EDE379C8B4 /* Pods_sdtUITests.framework */; };
 /* End PBXBuildFile section */
@@ -65,6 +67,8 @@
 		7256C6161E614B0300963341 /* development.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = development.entitlements; sourceTree = "<group>"; };
 		7256C6191E6150BC00963341 /* production.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = production.entitlements; sourceTree = "<group>"; };
 		727C6D6A1EBC557200F821A8 /* Garbage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Garbage.swift; sourceTree = "<group>"; };
+		727C6D6C1EBF1D1000F821A8 /* WardListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WardListViewController.swift; sourceTree = "<group>"; };
+		727C6D6E1EBF1DE500F821A8 /* PdfImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PdfImageViewController.swift; sourceTree = "<group>"; };
 		72F119E71E5EC8DE003A351F /* garbageBag3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = garbageBag3.png; path = images/garbageBag3.png; sourceTree = "<group>"; };
 		E7B3462BBEDE567427C3A216 /* Pods_sdt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sdt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -139,6 +143,8 @@
 				7256C6161E614B0300963341 /* development.entitlements */,
 				72197D9D1E558F89009F5F4D /* AppDelegate.swift */,
 				72197D9F1E558F89009F5F4D /* ViewController.swift */,
+				727C6D6C1EBF1D1000F821A8 /* WardListViewController.swift */,
+				727C6D6E1EBF1DE500F821A8 /* PdfImageViewController.swift */,
 				721EC62D1E7FA78E004897C9 /* Alert.swift */,
 				727C6D6A1EBC557200F821A8 /* Garbage.swift */,
 				72197DA11E558F89009F5F4D /* Main.storyboard */,
@@ -479,7 +485,9 @@
 				721EC62E1E7FA78E004897C9 /* Alert.swift in Sources */,
 				727C6D6B1EBC557200F821A8 /* Garbage.swift in Sources */,
 				72197DA01E558F89009F5F4D /* ViewController.swift in Sources */,
+				727C6D6D1EBF1D1000F821A8 /* WardListViewController.swift in Sources */,
 				72197D9E1E558F89009F5F4D /* AppDelegate.swift in Sources */,
+				727C6D6F1EBF1DE500F821A8 /* PdfImageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

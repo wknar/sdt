@@ -15,6 +15,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     @IBOutlet var dayButton1: UIButton?
     @IBOutlet var dayButton2: UIButton?
+    @IBOutlet var dayButton3: UIButton?
+    @IBOutlet var dayButton4: UIButton?
+    @IBOutlet var dayButton5: UIButton?
+    @IBOutlet var dayButton6: UIButton?
+    @IBOutlet var dayButton7: UIButton?
     @IBOutlet var contentLabel1: UILabel?
     @IBOutlet var contentLabel2: UILabel?
     @IBOutlet var contentLabel3: UILabel?
@@ -65,10 +70,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     func chanageDay(_ selectedDay: Int) {
         day = selectedDay
+        if let pickerView = pickerView, let index = getGarbageIndex(selectedDay) {
+            pickerView.selectRow(index, inComponent: 0, animated: true)
+        }
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
+    }
+
+    func changeButtonColor(_ num: Int) {
+        // dayButton1.backgroundColor = dayButton2.backgroundColor
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -145,6 +157,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
 
+    func getGarbageIndex(_ day: Int) -> Int? {
+        let realm = try! Realm()
+        if let garbage = realm.objects(Garbage.self).filter("day == \(day)").first, let index = pickerList.index(of: garbage.content) {
+            return index
+        }
+        return nil
+    }
+
     func createFirstData() {
         let realm = try! Realm()
         try! realm.write() {
@@ -157,6 +177,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             realm.create(Garbage.self, value: [7, pickerList[1]])
         }
         getGarbage()
+    }
+
+}
+
+class weekButton: UIButton {
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        layer.cornerRadius = 5
+        layer.borderWidth = 2
+        layer.borderColor = UIColor.blue.cgColor
     }
 
 }
