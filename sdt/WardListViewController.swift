@@ -11,22 +11,23 @@ import UIKit
 
 class WardListViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    enum Ward: String {
+        case chiyoda
+        case bunkyo
+        case setagaya
     }
 
-    @IBAction func back() {
-        self.dismiss(animated: true, completion: nil)
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
 
     @IBAction func clickChiyoda() {
         openPdfImage(.chiyoda)
     }
 
-    func openPdfImage(_ ward: PdfImageViewController.Ward) {
-        let storyboard = self.storyboard
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "pdfImageVC") as! PdfImageViewController
+    func openPdfImage(_ ward: Ward) {
+        let viewController = WebViewController()
         viewController.ward = ward
-        show(viewController, sender: nil)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

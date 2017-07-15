@@ -8,16 +8,23 @@
 
 import Foundation
 import UIKit
+import WebKit
 
-class PdfImageViewController: UIViewController {
+class WebViewController: UIViewController, WKNavigationDelegate {
 
-    enum Ward: String {
-        case chiyoda
-        case bunkyo
-        case setagaya
+    var ward: WardListViewController.Ward?
+    var webView: WKWebView?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        webView = WKWebView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height))
+        guard let webView = webView else {
+            // TODO: show alert
+            self.navigationController?.dismiss(animated: true, completion: nil)
+            return
+        }
+        view.addSubview(webView)
     }
-
-    var ward: Ward?
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -37,14 +44,12 @@ class PdfImageViewController: UIViewController {
             case .setagaya:
                 urlStr = "http://www.city.setagaya.lg.jp/kurashi/101/113/260/d00131841_d/fil/20140401-5.pdf"
                 break
-            default:
-                break
             }
         }
-    }
-
-    @IBAction func closeView() {
-        self.dismiss(animated: true, completion: nil)
+        guard let url = URL(string: urlStr), let webView = webView else {
+            return
+        }
+        webView.load(URLRequest(url: url))
     }
 
 }
