@@ -25,6 +25,14 @@ class WardListViewController: UIViewController {
         openPdfImage(.chiyoda)
     }
 
+    @IBAction func clickBunkyo() {
+        openPdfImage(.bunkyo)
+    }
+
+    @IBAction func clickSetagaya() {
+        openPdfImage(.setagaya)
+    }
+
     func openPdfImage(_ ward: Ward) {
         let viewController = WebViewController()
         viewController.ward = ward

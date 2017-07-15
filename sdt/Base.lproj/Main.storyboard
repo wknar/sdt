@@ -241,13 +241,29 @@
                                     <action selector="clickChiyoda" destination="CJJ-xv-e3w" eventType="touchUpInside" id="IFm-eo-nWL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9H-rG-w6K">
+                                <rect key="frame" x="38" y="141" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="文京区"/>
+                                <connections>
+                                    <action selector="clickBunkyo" destination="CJJ-xv-e3w" eventType="touchUpInside" id="kh6-dy-Esk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wv-eB-Sui">
+                                <rect key="frame" x="38" y="187" width="137" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="世田谷区"/>
+                                <connections>
+                                    <action selector="clickSetagaya" destination="CJJ-xv-e3w" eventType="touchUpInside" id="0Lm-fS-oJ8"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.65137449970000005" green="1" blue="0.80885309380000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BiG-0A-HLI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="894" y="138"/>
+            <point key="canvasLocation" x="892.75362318840587" y="137.77173913043478"/>
         </scene>
     </scenes>
 </document>
