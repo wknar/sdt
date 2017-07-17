@@ -19,6 +19,7 @@ class WardListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "区ごとの分別表"
     }
 
     @IBAction func clickChiyoda() {

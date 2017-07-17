@@ -13,6 +13,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     @IBOutlet weak var pickerView = UIPickerView()
 
+    @IBOutlet var descriptionLabel: UILabel?
     @IBOutlet var dayButton1: UIButton?
     @IBOutlet var dayButton2: UIButton?
     @IBOutlet var dayButton3: UIButton?
@@ -20,13 +21,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet var dayButton5: UIButton?
     @IBOutlet var dayButton6: UIButton?
     @IBOutlet var dayButton7: UIButton?
-    @IBOutlet var contentLabel1: UILabel?
-    @IBOutlet var contentLabel2: UILabel?
-    @IBOutlet var contentLabel3: UILabel?
-    @IBOutlet var contentLabel4: UILabel?
-    @IBOutlet var contentLabel5: UILabel?
-    @IBOutlet var contentLabel6: UILabel?
-    @IBOutlet var contentLabel7: UILabel?
 
     let pickerList = ["燃えるゴミ", "燃えないゴミ", "プラスチックゴミ", "資源ゴミ", "ゴミ捨てなし"]
     var contentList = [String]()
@@ -34,11 +28,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "ゴミ"
         if let pickerView = pickerView {
             pickerView.delegate = self
             pickerView.dataSource = self
             pickerView.selectRow(2, inComponent: 0, animated: true)
         }
+        descriptionLabel?.text = "クリックすると変更可能になります。"
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -79,10 +75,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return 1
     }
 
-    func changeButtonColor(_ num: Int) {
-        // dayButton1.backgroundColor = dayButton2.backgroundColor
-    }
-
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerList.count
     }
@@ -94,25 +86,25 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch day {
         case 1:
-            contentLabel1?.text = pickerList[row]
+            dayButton1?.setTitle(pickerList[row], for: .normal)
             contentList[0] = pickerList[row]
         case 2:
-            contentLabel2?.text = pickerList[row]
+            dayButton2?.setTitle(pickerList[row], for: .normal)
             contentList[1] = pickerList[row]
         case 3:
-            contentLabel3?.text = pickerList[row]
+            dayButton3?.setTitle(pickerList[row], for: .normal)
             contentList[2] = pickerList[row]
         case 4:
-            contentLabel4?.text = pickerList[row]
+            dayButton4?.setTitle(pickerList[row], for: .normal)
             contentList[3] = pickerList[row]
         case 5:
-            contentLabel5?.text = pickerList[row]
+            dayButton5?.setTitle(pickerList[row], for: .normal)
             contentList[4] = pickerList[row]
         case 6:
-            contentLabel6?.text = pickerList[row]
+            dayButton6?.setTitle(pickerList[row], for: .normal)
             contentList[5] = pickerList[row]
         case 7:
-            contentLabel7?.text = pickerList[row]
+            dayButton7?.setTitle(pickerList[row], for: .normal)
             contentList[6] = pickerList[row]
         default:
             return
@@ -129,6 +121,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
         try! realm.write() {
             realm.add(garbage, update: true)
+            descriptionLabel?.text = "保存しました。20時にアラートが届きます。"
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.descriptionLabel?.text = "クリックすると変更可能になります。"
+            }
         }
     }
 
@@ -140,13 +136,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         } else {
             createFirstData()
         }
-        contentLabel1?.text = contentList[0]
-        contentLabel2?.text = contentList[1]
-        contentLabel3?.text = contentList[2]
-        contentLabel4?.text = contentList[3]
-        contentLabel5?.text = contentList[4]
-        contentLabel6?.text = contentList[5]
-        contentLabel7?.text = contentList[6]
+        dayButton1?.setTitle(contentList[0], for: .normal)
+        dayButton2?.setTitle(contentList[1], for: .normal)
+        dayButton3?.setTitle(contentList[2], for: .normal)
+        dayButton4?.setTitle(contentList[3], for: .normal)
+        dayButton5?.setTitle(contentList[4], for: .normal)
+        dayButton6?.setTitle(contentList[5], for: .normal)
+        dayButton7?.setTitle(contentList[6], for: .normal)
     }
 
     func getGarbage() {
@@ -177,17 +173,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             realm.create(Garbage.self, value: [7, pickerList[1]])
         }
         getGarbage()
-    }
-
-}
-
-class weekButton: UIButton {
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        layer.cornerRadius = 5
-        layer.borderWidth = 2
-        layer.borderColor = UIColor.blue.cgColor
     }
 
 }
