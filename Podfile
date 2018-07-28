@@ -1,7 +1,7 @@
 target 'sdt' do
   use_frameworks!
 
-  pod 'RealmSwift', '2.10.1'
+  pod 'RealmSwift', '3.7.5'
 
   target 'sdtTests' do
     inherit! :search_paths
