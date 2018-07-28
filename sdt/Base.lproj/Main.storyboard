@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="m6w-NM-JMi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="m6w-NM-JMi">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <navigationController id="m6w-NM-JMi" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wkg-YJ-8eY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                     </navigationBar>
@@ -252,6 +252,72 @@
             <point key="canvasLocation" x="135" y="138.38028169014083"/>
         </scene>
         <!--Ward List View Controller-->
+        <scene sceneID="aMc-Lc-pNO">
+            <objects>
+                <viewController id="ffi-Ym-Sfi" customClass="WardListViewController" customModule="sdt" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hz2-J2-iTx"/>
+                        <viewControllerLayoutGuide type="bottom" id="eVQ-EB-hQf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j4W-lb-KZn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="McN-Nz-Y0a">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="WeekCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="fAc-Cq-FMF" customClass="WeekCell" customModule="sdt" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fAc-Cq-FMF" id="gq2-io-efW">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F7J-l2-pQt">
+                                                    <rect key="frame" x="5" y="10" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="9nt-Ob-CwA"/>
+                                                        <constraint firstAttribute="width" constant="30" id="s1M-ws-HE5"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tzf-6D-srp">
+                                                    <rect key="frame" x="40" y="13" width="275" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Tzf-6D-srp" secondAttribute="trailing" constant="5" id="Bsp-iV-ZhX"/>
+                                                <constraint firstItem="F7J-l2-pQt" firstAttribute="centerY" secondItem="gq2-io-efW" secondAttribute="centerY" id="LJg-K9-g22"/>
+                                                <constraint firstItem="Tzf-6D-srp" firstAttribute="centerY" secondItem="gq2-io-efW" secondAttribute="centerY" id="RRY-C8-xWz"/>
+                                                <constraint firstItem="Tzf-6D-srp" firstAttribute="leading" secondItem="F7J-l2-pQt" secondAttribute="trailing" constant="5" id="b5K-sw-eec"/>
+                                                <constraint firstItem="F7J-l2-pQt" firstAttribute="leading" secondItem="gq2-io-efW" secondAttribute="leading" constant="5" id="ozZ-rr-dqh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="Tzf-6D-srp" id="P9y-fq-Ay7"/>
+                                            <outlet property="weekIcon" destination="F7J-l2-pQt" id="QqE-W4-PKI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="McN-Nz-Y0a" secondAttribute="trailing" id="CzF-9X-WyP"/>
+                            <constraint firstAttribute="bottom" secondItem="McN-Nz-Y0a" secondAttribute="bottom" id="PoA-je-cJq"/>
+                            <constraint firstItem="McN-Nz-Y0a" firstAttribute="top" secondItem="j4W-lb-KZn" secondAttribute="top" id="Sfk-Vv-vXe"/>
+                            <constraint firstItem="McN-Nz-Y0a" firstAttribute="leading" secondItem="j4W-lb-KZn" secondAttribute="leading" id="dKl-La-FFZ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="442-Xc-gnC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-178.125" y="791.19718309859161"/>
+        </scene>
+        <!--Ward List View Controller-->
         <scene sceneID="aVX-2j-SHX">
             <objects>
                 <viewController id="CJJ-xv-e3w" customClass="WardListViewController" customModule="sdt" customModuleProvider="target" sceneMemberID="viewController">
@@ -325,18 +391,18 @@
         <image name="btn2" width="90" height="21"/>
         <image name="btn3" width="90" height="21"/>
         <image name="fri_btn" width="90" height="21"/>
-        <image name="fri_icon" width="164" height="164"/>
+        <image name="fri_icon" width="329" height="329"/>
         <image name="mon_btn" width="90" height="21"/>
-        <image name="mon_icon" width="164" height="164"/>
+        <image name="mon_icon" width="329" height="329"/>
         <image name="sat_btn" width="90" height="21"/>
-        <image name="sat_icon" width="164" height="164"/>
+        <image name="sat_icon" width="329" height="329"/>
         <image name="sun_btn" width="90" height="21"/>
-        <image name="sun_icon" width="164" height="164"/>
+        <image name="sun_icon" width="329" height="329"/>
         <image name="thu_btn" width="90" height="21"/>
-        <image name="thu_icon" width="164" height="164"/>
+        <image name="thu_icon" width="329" height="329"/>
         <image name="tue_btn" width="90" height="21"/>
-        <image name="tue_icon" width="164" height="164"/>
+        <image name="tue_icon" width="329" height="329"/>
         <image name="wed_btn" width="90" height="21"/>
-        <image name="wed_icon" width="164" height="164"/>
+        <image name="wed_icon" width="329" height="329"/>
     </resources>
 </document>
