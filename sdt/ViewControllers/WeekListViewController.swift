@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class WeekListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -18,18 +19,45 @@ class WeekListViewController: UIViewController, UITableViewDataSource, UITableVi
         case thu
         case fri
         case sat
+
+        static let count: Int = {
+            var max: Int = 0
+            while let _ = Week(rawValue: max) { max += 1 }
+            return max
+        }()
     }
+
+    @IBOutlet weak var tableView: UITableView!
+
+    var nameArray = [String]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
+
+        loadList()
+    }
+
+    func loadList() {
+        let realm = try! Realm()
+        let garbage = realm.objects(Garbage.self)
+        for i in 0..<garbage.count {
+            nameArray.insert(garbage[i].content, at: i)
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return Week.count
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WeekCell") as! WeekCell
-        cell.setup(week: Week(rawValue: indexPath.row)!, name: "okome") // TODO: add text from database
+        cell.setup(week: Week(rawValue: indexPath.row)!, name: nameArray[indexPath.row])
         return cell
     }
 
@@ -60,5 +88,6 @@ class WeekCell: UITableViewCell {
     }
 
     override func awakeFromNib() {
+        selectionStyle = .none
     }
 }
